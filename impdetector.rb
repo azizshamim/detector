@@ -1,6 +1,6 @@
 require 'sinatra'
 require 'digest/hmac'
-require File.expand_path('../job.rb', __FILE__)
+require File.expand_path('../impjob.rb', __FILE__)
 
 class ImpDetector < Sinatra::Application
   before do
