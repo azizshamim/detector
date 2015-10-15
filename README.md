@@ -1,6 +1,7 @@
 ### Detectors:
 
-#### Impersonation Detector
-Finds commits for which possible impersonation has happened and returns a failed status to GitHub for that commit.
+#### Impersonation Detector **DOESN'T DETECT IMPERSONATION**
+
+This was a proof of concept that *dis*proved the mechanism. Don't use it to detect impersonation.
 
 Meant to run on heroku.
