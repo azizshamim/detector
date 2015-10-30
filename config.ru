@@ -1,4 +1,4 @@
-require File.expand_path('../impdetector.rb', __FILE__)
+require File.expand_path('../lib/impdetector.rb', __FILE__)
 
 $stdout.sync = true
 
