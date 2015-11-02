@@ -1,6 +1,5 @@
 require File.expand_path("../../lib/impersonation/app.rb", __FILE__)
 require 'rack/test'
-require 'pp'
 
 describe "mpersonation" do
   include Rack::Test::Methods
@@ -26,10 +25,9 @@ describe "mpersonation" do
     end
   end
 
-  #describe "A push with new commits" do
-  #  it 'should check to see if all commiters on the commits match the pusher' do
-  #    pending
-  #  end
+  describe "A push with new commits" do
+    it 'should check to see if all commiters on the commits match the pusher' do
+    end
 
   #  it 'should flag the commits as failing the impersonation status' do
   #    pending
@@ -38,7 +36,7 @@ describe "mpersonation" do
   #  it 'should delete the commits that failed status' do
   #    pending
   #  end
-  #end
+  end
 
   #describe "A push with new commits in a pull request" do
   #  it 'should check to see if all the NEW commits have commiters matching the pusher' do
