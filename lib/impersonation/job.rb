@@ -1,6 +1,4 @@
-require 'octokit'
-
-class ImpDetector::Job
+class Job
   def initialize(repo,pr)
     @client = Octokit::Client.new :access_token => ENV['GITHUB_ACCESS_TOKEN']
     @repo = repo

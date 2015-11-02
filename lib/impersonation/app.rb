@@ -1,8 +1,10 @@
 require 'sinatra'
 require 'digest/hmac'
-require File.expand_path('../impjob.rb', __FILE__)
+require 'octokit'
 
-class ImpDetector < Sinatra::Application
+class Impersonation < Sinatra::Application
+  require File.expand_path("../job.rb", __FILE__)
+
   before do
     request.body.rewind
     @request_payload = request.body.read
@@ -33,12 +35,21 @@ class ImpDetector < Sinatra::Application
     pr = body['number']
     repo = body['repository']['full_name']
 
-    i = ImpDetector::Job.new(repo, pr)
+    i = Job.new(repo, pr)
     result = i.work
     [201, result.inspect]
   end
 
+  post "/", :x_github_event => /push/ do
+    halt 403 unless validate!
+    #body = JSON.parse(@request_payload)
+  end
+
   post "/" do
     halt 404
+  end
+
+  get "/" do
+    [ 200, "Whatever" ]
   end
 end
