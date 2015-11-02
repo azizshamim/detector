@@ -7,5 +7,8 @@ gem 'redis', '3.2.1'
 gem 'resque', '1.25.2'
 gem 'sinatra', '1.4.6'
 
-gem 'rspec', '~>3.3.0',      :groups => [:development, :test]
-gem 'rack-test'
+group :development,:test do
+  gem 'rspec', '~>3.3.0'
+  gem 'rack-test'
+  gem 'webmock'
+end

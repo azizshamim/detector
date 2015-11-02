@@ -2,9 +2,12 @@ GEM
   remote: https://rubygems.org/
   specs:
     addressable (2.3.8)
+    crack (0.4.2)
+      safe_yaml (~> 1.0.0)
     diff-lcs (1.2.5)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
+    hashdiff (0.2.2)
     mono_logger (1.1.0)
     multi_json (1.11.2)
     multipart-post (2.0.0)
@@ -37,6 +40,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.3.0)
     rspec-support (3.3.0)
+    safe_yaml (1.0.4)
     sawyer (0.6.0)
       addressable (~> 2.3.5)
       faraday (~> 0.8, < 0.10)
@@ -47,6 +51,10 @@ GEM
     tilt (2.0.1)
     vegas (0.1.11)
       rack (>= 1.0.0)
+    webmock (1.22.2)
+      addressable (>= 2.3.6)
+      crack (>= 0.3.2)
+      hashdiff
 
 PLATFORMS
   ruby
@@ -58,3 +66,4 @@ DEPENDENCIES
   resque (= 1.25.2)
   rspec (~> 3.3.0)
   sinatra (= 1.4.6)
+  webmock

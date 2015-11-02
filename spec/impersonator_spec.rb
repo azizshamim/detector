@@ -1,12 +1,5 @@
-require File.expand_path("../../lib/impersonation/app.rb", __FILE__)
-require 'rack/test'
-
-describe "mpersonation" do
+describe "Impersonation" do
   include Rack::Test::Methods
-  RSpec.configure do |conf|
-      conf.include Rack::Test::Methods
-  end
-
   def app
     @app ||= Impersonation
   end
@@ -25,9 +18,10 @@ describe "mpersonation" do
     end
   end
 
-  describe "A push with new commits" do
-    it 'should check to see if all commiters on the commits match the pusher' do
-    end
+  #describe "A push with new commits" do
+  #  it 'should check to see if all commiters on the commits match the pusher' do
+  #    post "/", {}, { HTTP_X_GITHUB_EVENT: "push" }
+  #  end
 
   #  it 'should flag the commits as failing the impersonation status' do
   #    pending
@@ -36,7 +30,7 @@ describe "mpersonation" do
   #  it 'should delete the commits that failed status' do
   #    pending
   #  end
-  end
+  #end
 
   #describe "A push with new commits in a pull request" do
   #  it 'should check to see if all the NEW commits have commiters matching the pusher' do
